@@ -130,11 +130,6 @@ python scripts/health_check.py
 2. **Corrected Isolation Condition (GREEN)**: Tests fully verified systems, rendering a "READY FOR AUTHORIZED HUMAN REVIEW" status.
 3. **Pressure Rebound (RED)**: Tests detection of pressure decay followed by anomalous increase.
 
-## 📸 Screenshots
-*(Placeholders for UI screenshots)*
-- `docs/screenshots/dashboard_red.png`
-- `docs/screenshots/dashboard_green.png`
-
 ## ⚠️ Safety Limitations
 **Prototype Disclaimer:** This software is a decision-support prototype. Mock limits are used for demonstration. The AI does not autonomously control machinery, open valves, or replace authorized safety professionals.
 
