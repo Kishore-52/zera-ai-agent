@@ -27,7 +27,7 @@ ZERA AI utilizes a six-agent architecture to decompose the complex, multi-domain
 
 ```mermaid
 graph TD
-    User([Maintenance Technician]) --> UI[Streamlit UI]
+    User([Maintenance Technician]) --> UI[Flask UI]
     UI --> Intake[Maintenance Intake Agent]
     Intake --> Memory[Safety Memory Agent]
     Memory <--> Qdrant[(Qdrant Vector DB)]
@@ -42,7 +42,7 @@ graph TD
 
 ```mermaid
 sequenceDiagram
-    participant UI as Streamlit App
+    participant UI as Flask 
     participant WF as Workflow Coordinator
     participant Agents as Agent Swarm
     participant Q as Qdrant
@@ -144,8 +144,8 @@ python scripts/health_check.py
 - Active integration with enterprise CMMS software.
 
 ## 👥 Team
-- [Team Member 1]
-- [Team Member 2]
+- Kishore J
+- Monika Srinithi T
 
 ## 🙏 Acknowledgement
 Built for the Google Advanced Agentic Coding Hackathon.
