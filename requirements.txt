@@ -1,0 +1,7 @@
+streamlit
+pydantic
+qdrant-client
+graphviz
+python-dotenv
+pytest
+google-genai

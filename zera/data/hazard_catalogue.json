@@ -1,0 +1,22 @@
+[
+  {
+    "hazard_id": "HAZ-001",
+    "description": "Hazardous electrical voltage",
+    "type": "Electrical"
+  },
+  {
+    "hazard_id": "HAZ-002",
+    "description": "Stored hydraulic pressure in accumulator",
+    "type": "Hydraulic"
+  },
+  {
+    "hazard_id": "HAZ-003",
+    "description": "Gravitational energy from raised ram",
+    "type": "Gravitational"
+  },
+  {
+    "hazard_id": "HAZ-004",
+    "description": "Stored pneumatic pressure in clamp",
+    "type": "Pneumatic"
+  }
+]

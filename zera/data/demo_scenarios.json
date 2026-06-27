@@ -1,0 +1,44 @@
+{
+  "scenario_1": {
+    "name": "UNSAFE HIDDEN-ENERGY CONDITION",
+    "electrical_voltage": 0,
+    "hydraulic_pressure": 42,
+    "pneumatic_pressure": 0,
+    "ram_position": "Raised",
+    "mechanical_block_installed": false,
+    "breaker_lock_verified": true,
+    "hydraulic_isolation_valve_verified": true,
+    "try_start_completed": false,
+    "movement_detected": false,
+    "supervisor_approval": false,
+    "hydraulic_pressure_series": [42, 42, 42]
+  },
+  "scenario_2": {
+    "name": "CORRECTED ISOLATION CONDITION",
+    "electrical_voltage": 0,
+    "hydraulic_pressure": 0.5,
+    "pneumatic_pressure": 0,
+    "ram_position": "Raised",
+    "mechanical_block_installed": true,
+    "breaker_lock_verified": true,
+    "hydraulic_isolation_valve_verified": true,
+    "try_start_completed": true,
+    "movement_detected": false,
+    "supervisor_approval": false,
+    "hydraulic_pressure_series": [42, 31, 20, 11, 5, 1.8, 0.8, 0.5]
+  },
+  "scenario_3": {
+    "name": "PRESSURE REBOUND",
+    "electrical_voltage": 0,
+    "hydraulic_pressure": 8,
+    "pneumatic_pressure": 0,
+    "ram_position": "Lowered",
+    "mechanical_block_installed": false,
+    "breaker_lock_verified": true,
+    "hydraulic_isolation_valve_verified": true,
+    "try_start_completed": true,
+    "movement_detected": false,
+    "supervisor_approval": false,
+    "hydraulic_pressure_series": [42, 28, 15, 7, 3, 5, 8]
+  }
+}

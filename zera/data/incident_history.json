@@ -1,0 +1,57 @@
+[
+  {
+    "incident_id": "HM-2025-07",
+    "machine_id": "HP-01",
+    "date": "2025-07-15",
+    "hazard": "Hydraulic Pressure",
+    "event_summary": "Hydraulic pressure initially decreased after isolation but later rebounded because an isolation valve was leaking. A second pressure observation was required before maintenance.",
+    "cause": "Leaking hydraulic isolation valve.",
+    "corrective_action": "Require time-series observation of pressure decay to detect rebound.",
+    "lesson": "Always observe pressure over time to ensure isolation is complete and not leaking.",
+    "tags": ["hydraulic", "pressure rebound", "valve leak"]
+  },
+  {
+    "incident_id": "HM-2025-08",
+    "machine_id": "HP-01",
+    "date": "2025-08-22",
+    "hazard": "Gravitational",
+    "event_summary": "Maintenance was attempted with a raised ram without a mechanical safety block installed.",
+    "cause": "Worker oversight.",
+    "corrective_action": "Enforce physical verification of mechanical block when ram is raised.",
+    "lesson": "Never rely solely on hydraulic pressure to hold a raised ram during maintenance.",
+    "tags": ["gravitational", "ram", "safety block"]
+  },
+  {
+    "incident_id": "HM-2025-09",
+    "machine_id": "HP-01",
+    "date": "2025-09-05",
+    "hazard": "Electrical",
+    "event_summary": "Incorrect breaker-lock photograph submitted as evidence.",
+    "cause": "Confusion over which breaker controlled the machine.",
+    "corrective_action": "Implement AI-assisted or dual-person verification of lock placement.",
+    "lesson": "Visual evidence must clearly identify the correct isolation point.",
+    "tags": ["electrical", "lockout", "evidence"]
+  },
+  {
+    "incident_id": "HM-2025-10",
+    "machine_id": "HP-01",
+    "date": "2025-10-12",
+    "hazard": "Mechanical",
+    "event_summary": "Try-start verification omitted before commencing work.",
+    "cause": "Rushed maintenance schedule.",
+    "corrective_action": "Make try-start verification a mandatory checklist item.",
+    "lesson": "Try-start is the final definitive check that energy is isolated.",
+    "tags": ["mechanical", "try-start"]
+  },
+  {
+    "incident_id": "HM-2025-11",
+    "machine_id": "HP-01",
+    "date": "2025-11-30",
+    "hazard": "Pneumatic",
+    "event_summary": "Pneumatic workpiece-clamp pressure overlooked during isolation.",
+    "cause": "Incomplete isolation plan.",
+    "corrective_action": "Include auxiliary pneumatic systems in the main LOTO procedure.",
+    "lesson": "All energy sources, even secondary ones, must be isolated.",
+    "tags": ["pneumatic", "clamp"]
+  }
+]

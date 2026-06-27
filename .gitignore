@@ -1,0 +1,14 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+storage/qdrant/
+storage/audit/*.json
+.streamlit/secrets.toml
+# IDE temporary files
+.vscode/
+.idea/
+# Operating-system temporary files
+.DS_Store
+Thumbs.db

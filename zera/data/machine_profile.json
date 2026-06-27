@@ -1,0 +1,37 @@
+{
+  "machine_id": "HP-01",
+  "machine_name": "Hydraulic Press HP-01",
+  "components": [
+    "Main Breaker",
+    "Control Circuit",
+    "Hydraulic Pump",
+    "Accumulator",
+    "Press Cylinder",
+    "Workpiece Clamp",
+    "Ram"
+  ],
+  "energy_sources": [
+    "Electrical",
+    "Hydraulic",
+    "Pneumatic",
+    "Gravitational",
+    "Mechanical"
+  ],
+  "isolation_points": [
+    "Main Electrical Breaker",
+    "Hydraulic Isolation Valve",
+    "Pneumatic Supply Valve",
+    "Mechanical Safety Block"
+  ],
+  "mock_safety_thresholds": {
+    "electrical_voltage_safe_threshold": 5,
+    "hydraulic_pressure_safe_threshold": 1,
+    "pneumatic_pressure_safe_threshold": 1
+  },
+  "required_evidence": [
+    "Breaker Lock",
+    "Hydraulic Valve Verification",
+    "Try-Start Verification"
+  ],
+  "disclaimer": "Mock manufacturer-approved limits for prototype simulation only. These are not universal industrial safety limits."
+}
