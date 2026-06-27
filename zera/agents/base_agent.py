@@ -7,6 +7,7 @@ class BaseAgent:
         self.name = name
         self.order = order
         self.api_key = os.environ.get("GOOGLE_API_KEY")
+        self.model = "gemini-flash-latest"
         self.is_local = not bool(self.api_key)
 
     def execute(self, inputs: Any, **kwargs) -> Tuple[Any, AgentTrace]:

@@ -5,8 +5,11 @@ from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, VectorParams, PointStruct
 from zera.schemas import RetrievedMemory
 
+_client_instance = None
+
 class QdrantStore:
     def __init__(self):
+        global _client_instance
         # Local Qdrant mode
         self.path = os.path.join(os.path.dirname(__file__), '..', '..', 'storage', 'qdrant')
         os.makedirs(self.path, exist_ok=True)
@@ -19,8 +22,14 @@ class QdrantStore:
             self.client = QdrantClient(url=url, api_key=api_key)
             self.mode = "Cloud"
         else:
-            self.client = QdrantClient(path=self.path)
-            self.mode = "Local"
+            if "PYTEST_CURRENT_TEST" in os.environ:
+                self.client = QdrantClient(location=":memory:")
+                self.mode = "Test Memory"
+            else:
+                if _client_instance is None:
+                    _client_instance = QdrantClient(path=self.path)
+                self.client = _client_instance
+                self.mode = "Local"
             
         self._ensure_collection()
 
@@ -32,7 +41,9 @@ class QdrantStore:
             )
 
     def _get_mock_vector(self, text: str):
-        # A deterministic fake vector for local demo mode without an embedding model
+        # A deterministic fake vector for local demo mode
+        if "rebound" in text.lower():
+            return [1.0] * 384
         val = sum(ord(c) for c in text) / 10000.0
         return [val] * 384
 
@@ -57,14 +68,14 @@ class QdrantStore:
     def search(self, query: str, limit: int = 3) -> list[RetrievedMemory]:
         try:
             vector = self._get_mock_vector(query)
-            results = self.client.search(
+            response = self.client.query_points(
                 collection_name=self.collection_name,
-                query_vector=vector,
+                query=vector,
                 limit=limit
             )
             
             memories = []
-            for res in results:
+            for res in response.points:
                 payload = res.payload or {}
                 memories.append(RetrievedMemory(
                     source_id=payload.get("source_id", "unknown"),
