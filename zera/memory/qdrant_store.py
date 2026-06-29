@@ -1,4 +1,6 @@
 import os
+import atexit
+
 import uuid
 import json
 from qdrant_client import QdrantClient
@@ -6,6 +8,21 @@ from qdrant_client.models import Distance, VectorParams, PointStruct
 from zera.schemas import RetrievedMemory
 
 _client_instance = None
+
+def close_qdrant_client() -> None:
+    """Close the shared local Qdrant client before Python shuts down."""
+    global _client_instance
+
+    if _client_instance is not None:
+        try:
+            _client_instance.close()
+        except Exception:
+            pass
+        finally:
+            _client_instance = None
+
+
+atexit.register(close_qdrant_client)
 
 class QdrantStore:
     def __init__(self):
