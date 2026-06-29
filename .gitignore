@@ -12,3 +12,5 @@ storage/audit/*.json
 # Operating-system temporary files
 .DS_Store
 Thumbs.db
+storage/audit/*
+!storage/audit/.gitkeep
